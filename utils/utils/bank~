@@ -1,0 +1,2 @@
+#!/bin/sh
+/root/driver/wport -b -p 0x3f0 -v $1

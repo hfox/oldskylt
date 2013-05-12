@@ -1,0 +1,137 @@
+SLOC count:
+File               LOC       Blank    Comment   Comments
+                             Lines    Lines
+--------------  ---------  --------  --------   --------
+Fork.C                161        25         0          0
+echo.C                 49        10         0          0
+ftp.C                 272        64         0          0
+pipestream.C          113        18         0          0
+smtp.C                141        30         0          0
+sockinet.C            289        50         0          0
+sockstream.C          554        88         0          0
+sockunix.C             91        20         0          0
+Fork.h                 52        14         0          0
+acconfig.h              7         4         4          4
+config.h               16        15        22         20
+echo.h                 36         8         0          0
+ftp.h                 115        20         0          0
+local.h                73        18         0          0
+pipestream.h           47        10         0          0
+protocol.h             75        17         0          0
+smtp.h                 53        16         0          0
+sockinet.h            104        21         0          0
+sockstream.h          227        49         0          0
+sockunix.h             65        15         0          0
+--------------  ---------  --------  --------   --------
+total                2540       512        26         24
+
+McCabe Metrics:
+File          	Name           	Complexity	No. of returns
+--------------	---------------	----------	--------------
+Fork.C        	***            	         4	         0
+Fork.C        	Fork::ForkProcess::ForkProcess	         6	         0
+Fork.C        	Fork::ForkProcess::~ForkProcess	         7	         0
+Fork.C        	Fork::KillForks::~KillForks	         4	         0
+Fork.C        	Fork::~Fork    	         2	         0
+Fork.C        	void           	         0	         4
+Fork.C        	void           	         0	         5
+Fork.C        	void           	         0	         8
+Fork.C        	void           	         0	         2
+echo.C        	void           	         0	        10
+ftp.C         	***            	        11	         4
+ftp.C         	ftp::ftp       	         1	         0
+ftp.C         	ftp::ftpbuf::ftpbuf	         1	         0
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         3
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	        10
+ftp.C         	ftp::replycodea	         0	         3
+ftp.C         	ftp::replycodea	         0	         3
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         2
+ftp.C         	ftp::replycodea	         0	         3
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	ftp::replycodea	         0	         1
+ftp.C         	void           	         0	         1
+pipestream.C  	iopipestream::iopipestream	         2	         0
+pipestream.C  	iopipestream::iopipestream	         1	         0
+pipestream.C  	ipipestream::ipipestream	         1	         0
+pipestream.C  	opipestream::opipestream	         1	         0
+pipestream.C  	pid_t          	         0	         8
+pipestream.C  	static         	         0	         0
+smtp.C        	***            	         3	         2
+smtp.C        	int            	         0	         2
+smtp.C        	ostream&       	         0	         0
+smtp.C        	void           	         0	         4
+smtp.C        	void           	         0	         8
+smtp.C        	void           	         0	         2
+smtp.C        	void           	         0	         1
+smtp.C        	void           	         0	         3
+smtp.C        	void           	         0	         2
+smtp.C        	void           	         0	         7
+smtp.C        	void           	         0	         4
+smtp.C        	void           	         0	         1
+sockinet.C    	***            	        13	        22
+sockinet.C    	int            	         0	         1
+sockinet.C    	int            	         0	         4
+sockinet.C    	int            	         0	         1
+sockinet.C    	iosockinet::iosockinet	         1	         0
+sockinet.C    	isockinet::isockinet	         1	         0
+sockinet.C    	osockinet::osockinet	         1	         0
+sockinet.C    	sockbuf*       	         0	         1
+sockinet.C    	sockinetaddr::sockinetaddr	         1	         0
+sockinet.C    	sockinetaddr::sockinetaddr	         1	         0
+sockinet.C    	sockinetbuf&   	         0	         0
+sockinet.C    	sockinetbuf::sockinetbuf	         1	         1
+sockinet.C    	void           	         0	         2
+sockinet.C    	void           	         0	         3
+sockinet.C    	void           	         0	         2
+sockstream.C  	***            	        19	        26
+sockstream.C  	_G_ssize_t     	         0	         1
+sockstream.C  	_G_ssize_t     	         0	         1
+sockstream.C  	int            	         0	         2
+sockstream.C  	int            	         0	         2
+sockstream.C  	int            	         0	         2
+sockstream.C  	int            	         0	         5
+sockstream.C  	int            	         0	         6
+sockstream.C  	int            	         0	         3
+sockstream.C  	int            	         0	         3
+sockstream.C  	int            	         0	         3
+sockstream.C  	int            	         0	         3
+sockstream.C  	int            	         0	         1
+sockstream.C  	int            	         0	         4
+sockstream.C  	int            	         0	         3
+sockstream.C  	int            	         0	         1
+sockstream.C  	int            	         0	         4
+sockstream.C  	int            	         0	         1
+sockstream.C  	int            	         0	         6
+sockstream.C  	int            	         0	         5
+sockstream.C  	int            	         0	         7
+sockstream.C  	iosockstream::~iosockstream	         1	         0
+sockstream.C  	isockstream::~isockstream	         1	         0
+sockstream.C  	osockstream::~osockstream	         1	         0
+sockstream.C  	sockbuf        	         0	         3
+sockstream.C  	sockbuf&       	         0	         0
+sockstream.C  	sockbuf*       	         0	         3
+sockstream.C  	sockbuf*       	         0	         1
+sockstream.C  	sockbuf::sockbuf	         1	         0
+sockstream.C  	sockbuf::~sockbuf	         3	         0
+sockstream.C  	void           	         0	         2
+sockstream.C  	void           	         0	         2
+sockstream.C  	void           	         0	         5
+sockunix.C    	int            	         0	         1
+sockunix.C    	int            	         0	         1
+sockunix.C    	iosockunix::iosockunix	         1	         0
+sockunix.C    	isockunix::isockunix	         1	         0
+sockunix.C    	osockunix::osockunix	         1	         0
+sockunix.C    	sockbuf*       	         0	         1
+sockunix.C    	sockunixaddr::sockunixaddr	         1	         0
+sockunix.C    	sockunixbuf&   	         0	         0
+sockunix.C    	sockunixbuf::sockunixbuf	         1	         1
+--------------	---------------	----------	--------------
+Total         	               	      0.90	      2.46

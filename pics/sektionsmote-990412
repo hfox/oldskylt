@@ -1,0 +1,11 @@
+#!/bin/bash -f
+
+sleep 2
+~/bin/random sektmote990412-1.sif
+sleep 2
+~/bin/random sektmote990412-2.sif
+sleep 2
+~/bin/random sektmote990412-3.sif
+sleep 2
+~/bin/vscroll clear.sif
+

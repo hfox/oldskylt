@@ -1,0 +1,53 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "bs.h"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+
+
+void main(int argc, char **argv)
+{
+  int n;
+  int bs;
+  int delay;
+  unsigned char bank, nbank;
+  unsigned char mode;
+  unsigned char buf[288];
+
+  delay = atoi(argv[1]);
+  if(delay < 1)
+    delay = 1;
+  if((bs=open("/dev/bs0", O_RDWR)) == -1) {
+    perror("open");
+    exit(-1);
+  }
+
+  ioctl(bs, BSGETMODE, &mode);
+  if(mode != 1) {
+    mode = 1;
+    ioctl(bs, BSSETMODE, &mode);
+  }
+  ioctl(bs, BSGETBANK, &bank);
+  
+  while(1) {
+    for(n = 0; n < argc-2; n++) {
+      int fd;
+      if((fd = open(argv[n+2], O_RDONLY)) == -1) {
+	fprintf(stderr,"file: %s\n", argv[n+2]);
+	perror("");
+      } else {
+	if(read(fd, buf, 288) != 288)
+	  fprintf(stderr, "too small picture\n");
+	bank = (bank+1)%4;
+	lseek(bs, bank*512, SEEK_SET);
+	write(bs, buf, 288);
+	ioctl(bs, BSSETBANK, &bank);
+	close(fd);
+	usleep(20000*delay);
+      }
+    }
+	
+  }
+}

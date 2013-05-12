@@ -1,0 +1,141 @@
+
+               |-Fork.C        
+               |-Fork.h        
+               |-METRICS       
+               |-Makefile      
+               |-Makefile.in   
+               |-README        
+               |-acconfig.h    
+               |-config.cache  
+               |-config.h      
+               |-config.h.in   
+               |-config.log    
+               |-config.status 
+               |-configure     
+               |-configure.in  
+               |-echo.C        
+               |-echo.h        
+               |-ftp.C         
+               |-ftp.h         
+               |-local.h       
+               |-output        
+               |-pipestream.C  
+               |-pipestream.h  
+               |-protocol.h    
+               |-smtp.C        
+               |-smtp.h        
+               |-socket++.ps   
+               |-socket++.texi 
+               |-sockinet.C    
+               |-sockinet.h    
+               |-sockstream.C  
+               |-sockstream.h  
+               |-sockunix.C    
+               |-sockunix.h    
+               |
+|-ASSET_A_1073-|               |-Makefile      
+               |               |-Makefile.in   
+               |               |-commObj.C     
+               |               |-commObj.h     
+               |               |-configure.in  
+               |               |-tcecho.C      
+               |               |-tcftp-gate.C  
+               |               |-tcftp-gate0.C 
+               |               |-tcftp.C       
+               |               |-tcsmtp.C      
+               |               |-tdinread.C    
+               |               |-tdinwrite.C   
+               |               |-tdunread.C    
+               |               |-tdunwrite.C   
+               |               |-testall.C     
+               |               |-testall.exp   
+               |               |-testall.out   
+               |-test----------|-tfork.C       
+                               |-tfork0.C      
+                               |-thostnames.C  
+                               |-tnntp.C       
+                               |-tpipe.C       
+                               |-tpopen-ftp.C  
+                               |-tpopen-lpc.C  
+                               |-tpopen.C      
+                               |-tpopentest.C  
+                               |-tsecho.C      
+                               |-tsendfiles.C  
+                               |-tsinread.C    
+                               |-tsinwrite.C   
+                               |-tsmtp.C       
+                               |-tsockpair.C   
+                               |-tsunread.C    
+                               |-tsunwrite.C   
+                               |-twhois.C      
+
+
+   Size Filename
+   4224 Fork.C
+   1679 Fork.h
+   7437 METRICS
+   1714 Makefile
+   1630 Makefile.in
+   6044 README
+    326 acconfig.h
+   1600 config.cache
+   1439 config.h
+   1312 config.h.in
+   1396 config.log
+   7568 config.status
+  47260 configure
+   2331 configure.in
+   1469 echo.C
+   1211 echo.h
+   7025 ftp.C
+   4138 ftp.h
+   2502 local.h
+  10689 output
+   3247 pipestream.C
+   1740 pipestream.h
+   2466 protocol.h
+   3335 smtp.C
+   2339 smtp.h
+ 260286 socket++.ps
+  79484 socket++.texi
+   7272 sockinet.C
+   3998 sockinet.h
+  13691 sockstream.C
+   7757 sockstream.h
+   2225 sockunix.C
+   2332 sockunix.h
+   1614 test/Makefile
+   1571 test/Makefile.in
+   3083 test/commObj.C
+   2928 test/commObj.h
+    681 test/configure.in
+    587 test/tcecho.C
+    902 test/tcftp-gate.C
+    806 test/tcftp-gate0.C
+    673 test/tcftp.C
+    700 test/tcsmtp.C
+    840 test/tdinread.C
+   2043 test/tdinwrite.C
+   1098 test/tdunread.C
+    727 test/tdunwrite.C
+   2946 test/testall.C
+   1584 test/testall.exp
+   1590 test/testall.out
+    887 test/tfork.C
+    510 test/tfork0.C
+    944 test/thostnames.C
+    756 test/tnntp.C
+    871 test/tpipe.C
+    230 test/tpopen-ftp.C
+    209 test/tpopen-lpc.C
+    915 test/tpopen.C
+    990 test/tpopentest.C
+    240 test/tsecho.C
+   1364 test/tsendfiles.C
+   1813 test/tsinread.C
+   1426 test/tsinwrite.C
+   1385 test/tsmtp.C
+    987 test/tsockpair.C
+   1092 test/tsunread.C
+    805 test/tsunwrite.C
+    656 test/twhois.C

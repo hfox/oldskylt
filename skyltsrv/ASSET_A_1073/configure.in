@@ -1,0 +1,93 @@
+dnl Use autoconf on this directory to produce configure script
+dnl Use autoheader on this file to produce config.h.in
+dnl Then use configure script to generate makefile from Makefile.in
+
+AC_INIT(sockstream.h)            dnl a distinct socket++ file
+AC_CONFIG_HEADER(config.h)
+
+dnl check for programs
+AC_PROG_MAKE_SET
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_RANLIB
+AC_CHECK_PROG(MAKEDEPEND, makedepend, makedepend, :) dnl not a smiley :(
+AC_PROG_CPP                      dnl later macros will use it
+AC_PROG_CXXCPP                   dnl later macros will use it
+AC_AIX
+
+dnl check for libraries
+AC_CHECK_LIB(nsl, t_accept, NETWORK_LIBS="$NETWORK_LIBS -lnsl")
+AC_CHECK_LIB(socket, socket, NETWORK_LIBS="$NETWORK_LIBS -lsocket")
+AC_SUBST(NETWORK_LIBS)
+
+dnl check for header files
+AC_LANG_SAVE
+AC_LANG_CPLUSPLUS
+AC_CHECK_HEADERS(builtin.h string.h memory.h)
+AC_CHECK_HEADER(_G_config.h, AC_DEFINE(_S_LIBGXX))
+AC_LANG_RESTORE
+AC_HEADER_SYS_WAIT
+
+dnl check for typedefs
+AC_PID_T
+
+dnl check for structures
+
+dnl check for compiler characteristics
+AC_SUBST(CFLAGS)
+AC_SUBST(CXXFLAGS)
+AC_SUBST(LDFLAGS)
+
+dnl check for library functions and global variables
+AC_RETSIGTYPE
+AC_FUNC_VFORK
+AC_HAVE_FUNCS(select)
+
+AC_MSG_CHECKING(for sys_siglist)
+AC_CACHE_VAL(socketxx_cv_siglist, [
+AC_TRY_LINK([
+# include <unistd.h>
+# include <sys/signal.h>
+], [
+#ifndef _sys_siglist
+  extern char* _sys_siglist[];
+#endif
+  puts(*_sys_siglist);
+],
+socketxx_cv_siglist=_sys_siglist,
+socketxx_cv_siglist=sys_siglist) ])
+
+AC_DEFINE_UNQUOTED(SYS_SIGLIST, $socketxx_cv_siglist)
+AC_MSG_RESULT($socketxx_cv_siglist)
+
+dnl the following check was provided by
+dnl Blair Zajac <blair@olympia.gps.caltech.edu>
+AC_MSG_CHECKING(if extern \"C\" wrappers are needed)
+AC_CACHE_VAL(bz_cv_cplusplus_needexternCwrapper, [
+AC_LANG_SAVE
+AC_LANG_CPLUSPLUS
+AC_TRY_LINK([
+# include <string.h>
+# include <stdio.h>
+], [
+  char buf[100];
+  strcpy(buf, "Hello world\n");
+],
+  bz_cv_cplusplus_needexternCwrapper=no,
+  bz_cv_cplusplus_needexternCwrapper=yes)
+])
+AC_LANG_RESTORE
+
+if test $bz_cv_cplusplus_needexternCwrapper = no; then
+  AC_DEFINE(EXTERN_C_BEGIN,)
+  AC_DEFINE(EXTERN_C_END,)
+else
+  AC_DEFINE(EXTERN_C_BEGIN, extern "C" {)
+  AC_DEFINE(EXTERN_C_END, })
+fi
+AC_MSG_RESULT($bz_cv_cplusplus_needexternCwrapper)
+
+dnl check for system
+
+dnl generate output files
+AC_OUTPUT(Makefile test/Makefile)

@@ -1,0 +1,13 @@
+#!/bin/bash -f
+
+sleep 2
+~/bin/random 10.sif
+sleep 2
+~/bin/vscroll 11.sif
+sleep 2
+~/bin/vscroll 12.sif
+sleep 2
+~/bin/vscroll 13.sif
+sleep 2
+~/bin/vscroll clear.sif
+

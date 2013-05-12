@@ -1,0 +1,15 @@
+#!/bin/bash -f
+
+while true
+do
+~/bin/random skylt1.sif
+sleep 1
+~/bin/random skylt2.sif
+sleep 1
+~/bin/vscroll2 skylt3.sif
+sleep 1
+~/bin/random skylt4.sif
+sleep 2
+~/bin/vscroll clear.sif
+sleep 20
+done

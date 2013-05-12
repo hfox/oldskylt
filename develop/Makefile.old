@@ -1,0 +1,17 @@
+OBJS = image.o basskylt.o importpng.o
+
+hscrolltext: $(OBJS) text.o
+	g++ -o hscrolltext $(OBJS) text.o
+
+text.o: text.cc
+	g++ -c -fhandle-exceptions text.cc
+
+image.o: image.cc
+	g++ -c -fhandle-exceptions image.cc
+
+basskylt.o: basskylt.cc
+	g++ -c -fhandle-exceptions basskylt.cc
+
+importpng.o: importpng.cc
+	g++ -c -fhandle-exceptions importpng.cc
+

@@ -1,0 +1,36 @@
+#!/bin/bash -f
+
+while true
+do
+../bin/random drust.sif
+sleep 1
+../bin/random stada/presents.sif
+sleep 1
+~/bin/random basta.stadnollan.sif
+sleep 1
+~/bin/random de.som.stadat.bast.sif
+sleep 1
+~/bin/random decho_reklam.sif
+sleep 1
+~/bin/random Risker.sif
+sleep 1
+~/bin/random KopSlump.sif
+sleep 1
+~/bin/random chor.sif
+sleep 1
+~/bin/random besthafv.sif
+sleep 1
+~/bin/random waldemar.sif
+sleep 1
+~/bin/random clear.sif
+~/bin/vscroll2 rustnytt1.sif 
+~/bin/vscroll rustnytt2.sif
+~/bin/random rustnytt3.sif
+sleep 1
+~/bin/random ior_back.sif
+sleep 1
+
+#~/bin/show 80 1 drust.sif stada/presents.sif stada/veckans.sif stada/namn.sif snd.sif decho_reklam.sif
+
+#~/bin/show 2 1 anim/s1.sif anim/s2.sif anim/s3.sif anim/s4.sif anim/s5.sif anim/s6.sif anim/s7.sif anim/s8.sif anim/s9.sif anim/s10.sif anim/s11.sif anim/s12.sif anim/s13.sif anim/s14.sif anim/s15.sif anim/s16.sif anim/s17.sif anim/s18.sif anim/s19.sif anim/s20.sif anim/s21.sif anim/s22.sif anim/s23.sif anim/s24.sif anim/s25.sif drust.sif
+done

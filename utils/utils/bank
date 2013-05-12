@@ -1,0 +1,3 @@
+#!/bin/sh
+wport -b -p 0x3f0 -v $1
+

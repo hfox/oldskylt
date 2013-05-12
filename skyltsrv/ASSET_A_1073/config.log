@@ -1,0 +1,28 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+collect2: ld returned 255 exit status
+0706-005 ld: Cannot find file: /lib/libnsl.a
+	Check path name and permissions or
+	use local problem reporting procedures.
+collect2: ld returned 255 exit status
+0706-005 ld: Cannot find file: /lib/libsocket.a
+	Check path name and permissions or
+	use local problem reporting procedures.
+In file included from configure:901:
+/usr/local/lib/gcc-lib/rs6000-ibm-aix3.2.5/2.7.2/include/sys/wait.h:106: warning: `struct rusage' declared inside parameter list
+/usr/local/lib/gcc-lib/rs6000-ibm-aix3.2.5/2.7.2/include/sys/wait.h:106: warning: its scope is only this definition or declaration,
+/usr/local/lib/gcc-lib/rs6000-ibm-aix3.2.5/2.7.2/include/sys/wait.h:106: warning: which is probably not what you want.
+configure:1133: vfork.h: No such file or directory
+collect2: ld returned 8 exit status
+0706-317 ERROR: Unresolved or undefined symbols detected:
+		 Symbols in error (followed by references) are
+		 dumped to the load map.
+		 The -bloadmap:<filename> option will create a load map.
+.vfork
+collect2: ld returned 8 exit status
+0706-317 ERROR: Unresolved or undefined symbols detected:
+		 Symbols in error (followed by references) are
+		 dumped to the load map.
+		 The -bloadmap:<filename> option will create a load map.
+_sys_siglist

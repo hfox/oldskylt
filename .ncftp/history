@@ -1,0 +1,24 @@
+get bs.c 
+quit
+get *
+quit
+get *
+quit
+cd /lfs/DRUST/
+cd ljusskylt/
+get hafvohl.gif 
+quit
+open dtek.chalmers.se
+open -u d95davos dtek.chalmers.se
+open dtek.chalmers.se -u d95davos
+help open
+open dtek.chalmers.se -u
+open -u dtek.chalmers.se
+ls film*
+get film*
+close
+quit
+open dtek.chalmers.se
+cd tmp
+ls
+get *.sif

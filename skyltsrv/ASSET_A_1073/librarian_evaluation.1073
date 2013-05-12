@@ -1,0 +1,109 @@
+                         ASSET_A_1073 Evaluation.
+                        =========================
+Asset Title: Socket++
+
+Evaluation level:   LEVEL 3  -  Compiled
+
+   ASSET has tested software files for compilation and document files for 
+   printability.  No deficiencies or internal inconsistencies were found.
+
+Evaluator:  Roy Hollinger               Evaluation Date:  11-DEC-1995
+
+Evaluation Summary:
+
+This software suite was compiled with g++ vers. 2.7.2 with g++ lib
+2.7.1 on an RS6000 AIX. The compilation produced minor warnings that did
+not effect the performance or linkage of the executables.
+
+Deficiencies:
+Minor discrepancies in README file: Version number wrong, should be 1.10.
+Directions for making testing programs should be 'make CXX=g++ check'.
+
+The main Makefile has no target for 'check' as described in the README file.
+
+
+Vendor Rebuttal:
+Vendor made no rebuttal to evaluation.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Checklist for all assets:
+
+                           Present  Test    Analysis
+                           -------  -----   -----------------------------------
+   Title (descriptive)        X
+   Abstract                   X
+   Distribution Statement     X
+   Elements                   X
+   Readme                     X
+   Contents list              X             In README
+   Tar-zip file               X
+   Standard file/             X
+      extension names  
+
+   Classification:
+      [Searches performed/Ease of finding, etc.]
+
+   Cross references:
+      [Explanations of versions, see_also, etc.]
+
+   Comments:
+      [comments specific to the metadata and library installation]
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Checklist for documents:
+                
+   Format          Present  Test         Analysis
+                            (Read/Print) (e.g. complete; missing figures)
+   -----------     -------  ------------ ------------------------------------
+   Paper             
+   ASCII text        
+   PostScript        X           X       Successfully read with Ghostscript
+                                         viewer.
+   SGML/DTD          
+   word processor    
+   other             X                   Texinfo.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Checklist for Software:
+ 
+   Part                       Present  Test   Analysis
+   -------------------------  -------  -----  ---------------------------------
+   Development Standard                       None
+   Code Comments                 X            Very few
+   Users Guide                   X            socket++.ps, socket++.texi
+   Design Documentation          X            socket++.ps (Section 1)
+   Requirements Specification                 None
+   Version  Description          X
+   Installation Instructions     X            README
+   Usage Info                    X            socket++.ps
+   Training Manuals              X            socket++.ps
+   Test Procedures/ Programs     X        X
+   Compile order                 X        X   'configure' generated Makefile
+   Other             
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Checklist for Software Level 3 Compilation:
+
+   Function       Present  Test   Analysis
+   -------------  -------  -----  ---------------------------------------------
+   Code Metrics      
+   Compile           X       X    With warnings (implicit declarations)
+   Link              X       X    (See test)
+   Run               X       X    (See test)
+   Test              X       X    Compiled with no warnings. Test run and
+                                  produced expected output with very minor
+                                  formatting differences. (Where the program
+                                  name was output the expected result was
+                                  './{filename}' and generated was
+                                  '{filename}'.
+   Reusability       X            socket++ was developed as a C++ interface
+                                  library for the Unix socket library.
+
+
+Copyright 1996 - SAIC/ASSET. This document may be distributed
+fully intact, including this copyright statement, as long as no
+fee is collected by the distributor. All other rights reserved.

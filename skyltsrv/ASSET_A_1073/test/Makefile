@@ -1,0 +1,74 @@
+# Generated automatically from Makefile.in by configure.
+srcdir = .
+
+#### package, host, target, and site dependent Makefile fragments come in here.
+##
+
+LIBS = -L$(srcdir)/.. -lsocket++ 
+
+TESTSRCS = tdunread.C tdunwrite.C \
+	tdinread.C tdinwrite.C \
+	tsunread.C tsunwrite.C \
+	tsinread.C tsinwrite.C \
+	tpipe.C \
+	tsockpair.C \
+	tpopen.C tpopen-lpc.C tpopen-ftp.C \
+	tpopentest.C \
+	testall.C \
+	tnntp.C \
+	tsmtp.C \
+	tsendfiles.C \
+	thostnames.C \
+	twhois.C \
+	tfork.C tfork0.C \
+	tsecho.C tcecho.C \
+	tcsmtp.C \
+        tcftp.C
+
+TESTOBJS = $(TESTSRCS:.C=.o)
+TESTS = $(TESTSRCS:.C=)
+
+DEPEND_SOURCES = $(srcdir)/*.C
+
+.SUFFIXES: .o .C .cc
+
+.cc.o .C.o:
+	$(CXX) -c $(CXXFLAGS) -I$(srcdir) -I$(srcdir)/.. $<
+
+.PHONY: check
+check: testall.out
+	diff -c testall.exp testall.out || make -f Makefile.in message
+
+message:
+	@echo
+	@echo If there are any differences, manually check whether
+	@echo testall.out and testall.exp have the same lines but
+	@echo only their order is different. If they have the same
+	@echo lines but for the order, you have installed properly.
+	@echo Otherwise, try to findout what might be the reason and
+	@echo if you could not please email me with your problem at
+	@echo gs4t@virginia.edu.
+	@echo
+
+
+testall.out: $(TESTS)
+	testall > testall.out
+
+$(TESTS): $(TESTOBJS)
+	$(CXX) $(CFLAGS) -o $@ $@.o $(LIBS)
+
+update-version:
+	for i in $(TESTSRCS); \
+		do \
+		sed -e "s/Version: [0-9a-zA-Z]* [0-9.]*/Version: `date +%d%h%y` $(VERSION)/g" $$i > TMP$$i; \
+		mv TMP$$i $$i; \
+		done
+
+clean:
+	-rm -f *~ *.o core $(TESTS)
+
+real-clean: clean
+	-rm -f Makefile
+
+depend:
+	makedepend $(CXXINCLUDES) $(TESTSRCS)

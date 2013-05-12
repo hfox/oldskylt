@@ -1,0 +1,12 @@
+#!/bin/tcsh
+while (1)
+wport -b -p 0x3f0 -v 1 > /dev/null
+sleep 2
+wport -b -p 0x3f0 -v 5 > /dev/null
+sleep 2
+wport -b -p 0x3f0 -v 9 > /dev/null
+sleep 2
+wport -b -p 0x3f0 -v 13 > /dev/null
+sleep 2
+end
+

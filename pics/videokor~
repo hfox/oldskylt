@@ -1,0 +1,24 @@
+#!/bin/bash -f
+
+while true
+do
+~/bin/random 1.sif
+sleep 2
+~/bin/random 2.sif
+sleep 2
+~/bin/ 3.sif
+sleep 2
+~/bin/random clear.sif
+sleep 5
+~/bin/vscroll2 10.sif
+sleep 1
+~/bin/vscroll2 11.sif
+sleep 1
+~/bin/vscroll2 12.sif
+sleep 1
+~/bin/vscroll2 13.sif
+sleep 1
+~/bin/vscroll2 clear.sif
+sleep 5
+done
+

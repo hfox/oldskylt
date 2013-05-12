@@ -1,0 +1,4 @@
+#!/bin/bash -f
+
+./sektionsmote-990412
+exec ./skylt

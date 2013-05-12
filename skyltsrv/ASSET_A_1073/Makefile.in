@@ -1,0 +1,68 @@
+
+# Places to install libraries, binaries, etc.
+prefix     = @prefix@
+bindir     = $(prefix)/bin
+libdir     = $(prefix)/lib
+includedir = $(prefix)/include
+
+# For some losing Unix makes.
+SHELL = /bin/sh
+@SET_MAKE@
+
+# The C and C++ compilers to use.
+CC         = @CC@
+CXX        = @CXX@
+
+# Various programs used in compilation and running of the programs.
+RANLIB     = @RANLIB@
+MAKEDEPEND = @MAKEDEPEND@ @CXX_INCLUDE_PATH@ -D__cplusplus
+
+# Compilation and linking flags.
+CFLAGS            = @CFLAGS@
+CXXFLAGS          = @CXXFLAGS@
+LDFLAGS           = @LDFLAGS@
+
+CXXFLAGS_EXTRA    = -I.
+CXXFLAGS_ALL      = $(CXXFLAGS) $(CXXFLAGS_EXTRA)
+
+SOCKETXX_HFILES  = sockstream.h sockinet.h sockunix.h pipestream.h \
+	Fork.h protocol.h echo.h smtp.h ftp.h
+
+SOCKETXX_CFILES = sockstream.C sockinet.C sockunix.C pipestream.C \
+		  Fork.C echo.C smtp.C ftp.C
+
+SOCKETXX_OFILES = $(SOCKETXX_CFILES:.C=.o)
+
+all: libsocket++.a
+
+libsocket++.a: $(SOCKETXX_OFILES)
+	-rm -f $@
+	$(AR) cq $@ $(SOCKETXX_OFILES)
+	$(RANLIB) $@
+
+.C.o:
+	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS_ALL) $< -o $@
+
+.PHONY: depend
+depend:
+	$(MAKEDEPEND) $(SOCKETXX_CFILES)
+
+install: uninstall
+	mkdir -p $(libdir)
+	cp libsocket++.a $(libdir)/libsocket++.a && \
+	   $(RANLIB) $(libdir)/libsocket++.a
+	mkdir -p $(includedir)
+	cp $(SOCKETXX_HFILES) $(includedir) && \
+	   cd $(includedir) && \
+	   chmod 444 $(SOCKETXX_HFILES)
+
+uninstall:
+	-rm -f $(libdir)/libsocket++.a
+	cd $(includedir) && rm -f $(SOCKETXX_HFILES)
+
+clean:
+	-rm -f libsocket++.a *.o *~ *.bak core
+
+real-clean: clean
+	-rm -f config.log config.cache config.status config.h Makefile
+	(cd ./test; $(MAKE) -f Makefile.in real-clean)

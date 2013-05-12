@@ -1,0 +1,19 @@
+#!/bin/sh
+
+~/utils/utils/bank 1
+
+while true
+do
+  for f in ${*}
+    do
+      cat $f > /dev/bs0
+      cat $f > /dev/bs0
+      
+	
+    	/home/root/inv
+/home/root/inv
+	
+    	/home/root/inv
+    sleep 2
+	done
+done

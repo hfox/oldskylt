@@ -1,0 +1,19 @@
+anonopen 1
+anonpass skylten@dtest1.dtek.chalmers.se
+blank-lines 1
+ftp-mode 0
+logsize 10240
+maxbookmarks 0
+pager /bin/more
+progress-meter 2
+remote-msgs 0
+startup-lcwd 
+startup-msgs 3
+timeout 30
+trace 0
+utime 1
+visual 1
+show-trailing-space 0
+total-runs 39
+total-xfer-hundredths-of-seconds 2299
+total-xfer-kbytes 302

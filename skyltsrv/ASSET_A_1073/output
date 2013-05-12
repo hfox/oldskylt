@@ -1,0 +1,267 @@
+Script command is started on Mon Dec 11 09:35:06 EST 1995.[reuse:royholl]/home/royholl/asset-sub/766/socket++-1.10> configure
+creating cache ./config.cache
+checking whether make sets $MAKE... yes
+checking for gcc... gcc
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking for c++... c++
+checking whether we are using GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for ranlib... ranlib
+checking for makedepend... makedepend
+checking how to run the C preprocessor... gcc -E
+checking how to run the C++ preprocessor... c++ -E
+checking for AIX... yes
+checking for -lnsl... no
+checking for -lsocket... no
+checking for builtin.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for _G_config.h... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking whether cross-compiling... no
+checking for ANSI C header files... yes
+checking for pid_t... yes
+checking return type of signal handlers... void
+checking for vfork.h... no
+checking for working vfork... no
+checking for select... yes
+checking for sys_siglist... sys_siglist
+checking if extern "C" wrappers are needed... no
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating test/Makefile
+creating config.h
+[reuse:royholl]/home/royholl/asset-sub/766/socket++-1.10> make CXX=g++ check
+Make: make: 1254-002 Cannot find a rule to create target check from dependencies.
+   Stop.
+[reuse:royholl]/home/royholl/asset-sub/766/socket++-1.10> man ke
+	c++ -c  -g -O -I. sockstream.C -o sockstream.o
+sockstream.C: In method `sockbuf::sockbuf(int, sockbuf::type, int)':
+sockstream.C:89: warning: implicit declaration of function `int socket(...)'
+sockstream.C: In method `int sockbuf::bind(class sockAddr &)':
+sockstream.C:252: warning: implicit declaration of function `int bind(...)'
+sockstream.C: In method `int sockbuf::connect(class sockAddr &)':
+sockstream.C:261: warning: implicit declaration of function `int connect(...)'
+sockstream.C: In method `void sockbuf::listen(int = somaxconn)':
+sockstream.C:270: warning: implicit declaration of function `int listen(...)'
+sockstream.C: In method `class sockbuf sockbuf::accept(class sockAddr &)':
+sockstream.C:278: warning: implicit declaration of function `int accept(...)'
+sockstream.C: In method `int sockbuf::recv(void *, int, int = 0)':
+sockstream.C:312: warning: implicit declaration of function `int recv(...)'
+sockstream.C: In method `int sockbuf::recvfrom(class sockAddr &, void *, int, int = 0)':
+sockstream.C:324: warning: implicit declaration of function `int recvfrom(...)'
+sockstream.C: In method `int sockbuf::send(const void *, int, int = 0)':
+sockstream.C:354: warning: implicit declaration of function `int send(...)'
+sockstream.C: In method `int sockbuf::sendto(class sockAddr &, const void *, int, int = 0)':
+sockstream.C:371: warning: implicit declaration of function `int sendto(...)'
+sockstream.C: In method `int sockbuf::recvmsg(struct msghdr *, int = 0)':
+sockstream.C:390: warning: implicit declaration of function `int recvmsg(...)'
+sockstream.C: In method `int sockbuf::sendmsg(struct msghdr *, int = 0)':
+sockstream.C:400: warning: implicit declaration of function `int sendmsg(...)'
+sockstream.C: In method `int sockbuf::getopt(enum sockbuf::option, void *, int, enum sockbuf::level = sol_socket) const':
+sockstream.C:494: warning: implicit declaration of function `int getsockopt(...)'
+sockstream.C: In method `void sockbuf::setopt(enum sockbuf::option, void *, int, enum sockbuf::level = sol_socket) const':
+sockstream.C:501: warning: implicit declaration of function `int setsockopt(...)'
+	c++ -c  -g -O -I. sockinet.C -o sockinet.o
+sockinet.C: In method `class sockinetaddr sockinetbuf::localaddr() const':
+sockinet.C:147: warning: implicit declaration of function `int getsockname(...)'
+sockinet.C: In method `class sockinetaddr sockinetbuf::peeraddr() const':
+sockinet.C:171: warning: implicit declaration of function `int getpeername(...)'
+	c++ -c  -g -O -I. sockunix.C -o sockunix.o
+	c++ -c  -g -O -I. pipestream.C -o pipestream.o
+pipestream.C: In function `class sockbuf * createpipestream(const char *, int)':
+pipestream.C:31: warning: implicit declaration of function `int socketpair(...)'
+	c++ -c  -g -O -I. Fork.C -o Fork.o
+	c++ -c  -g -O -I. echo.C -o echo.o
+	c++ -c  -g -O -I. smtp.C -o smtp.o
+	c++ -c  -g -O -I. ftp.C -o ftp.o
+	rm -f libsocket++.a
+	ar cq libsocket++.a sockstream.o sockinet.o sockunix.o pipestream.o  Fork.o echo.o smtp.o ftp.o
+	ranlib libsocket++.a
+[reuse:royholl]/home/royholl/asset-sub/766/socket++-1.10> cd test
+/home/royholl/asset-sub/766/socket++-1.10/test
+[reuse:royholl]/home/royholl/asset-sub/766/socket++-1.10/test> make CXX=g++ XX=g++ c      <heck
+	g++ -c  -I. -I./.. tdunread.C
+	g++ -c  -I. -I./.. tdunwrite.C
+	g++ -c  -I. -I./.. tdinread.C
+	g++ -c  -I. -I./.. tdinwrite.C
+	g++ -c  -I. -I./.. tsunread.C
+	g++ -c  -I. -I./.. tsunwrite.C
+	g++ -c  -I. -I./.. tsinread.C
+	g++ -c  -I. -I./.. tsinwrite.C
+	g++ -c  -I. -I./.. tpipe.C
+	g++ -c  -I. -I./.. tsockpair.C
+	g++ -c  -I. -I./.. tpopen.C
+	g++ -c  -I. -I./.. tpopen-lpc.C
+	g++ -c  -I. -I./.. tpopen-ftp.C
+	g++ -c  -I. -I./.. tpopentest.C
+	g++ -c  -I. -I./.. testall.C
+	g++ -c  -I. -I./.. tnntp.C
+	g++ -c  -I. -I./.. tsmtp.C
+	g++ -c  -I. -I./.. tsendfiles.C
+	g++ -c  -I. -I./.. thostnames.C
+	g++ -c  -I. -I./.. twhois.C
+	g++ -c  -I. -I./.. tfork.C
+	g++ -c  -I. -I./.. tfork0.C
+	g++ -c  -I. -I./.. tsecho.C
+	g++ -c  -I. -I./.. tcecho.C
+	g++ -c  -I. -I./.. tcsmtp.C
+	g++ -c  -I. -I./.. tcftp.C
+	g++ -O -o tdunread tdunread.o -L./.. -lsocket++ 
+	g++ -O -o tdunwrite tdunwrite.o -L./.. -lsocket++ 
+	g++ -O -o tdinread tdinread.o -L./.. -lsocket++ 
+	g++ -O -o tdinwrite tdinwrite.o -L./.. -lsocket++ 
+	g++ -O -o tsunread tsunread.o -L./.. -lsocket++ 
+	g++ -O -o tsunwrite tsunwrite.o -L./.. -lsocket++ 
+	g++ -O -o tsinread tsinread.o -L./.. -lsocket++ 
+	g++ -O -o tsinwrite tsinwrite.o -L./.. -lsocket++ 
+	g++ -O -o tpipe tpipe.o -L./.. -lsocket++ 
+	g++ -O -o tsockpair tsockpair.o -L./.. -lsocket++ 
+	g++ -O -o tpopen tpopen.o -L./.. -lsocket++ 
+	g++ -O -o tpopen-lpc tpopen-lpc.o -L./.. -lsocket++ 
+	g++ -O -o tpopen-ftp tpopen-ftp.o -L./.. -lsocket++ 
+	g++ -O -o tpopentest tpopentest.o -L./.. -lsocket++ 
+	g++ -O -o testall testall.o -L./.. -lsocket++ 
+	g++ -O -o tnntp tnntp.o -L./.. -lsocket++ 
+	g++ -O -o tsmtp tsmtp.o -L./.. -lsocket++ 
+	g++ -O -o tsendfiles tsendfiles.o -L./.. -lsocket++ 
+	g++ -O -o thostnames thostnames.o -L./.. -lsocket++ 
+	g++ -O -o twhois twhois.o -L./.. -lsocket++ 
+	g++ -O -o tfork tfork.o -L./.. -lsocket++ 
+	g++ -O -o tfork0 tfork0.o -L./.. -lsocket++ 
+	g++ -O -o tsecho tsecho.o -L./.. -lsocket++ 
+	g++ -O -o tcecho tcecho.o -L./.. -lsocket++ 
+	g++ -O -o tcsmtp tcsmtp.o -L./.. -lsocket++ 
+	g++ -O -o tcftp tcftp.o -L./.. -lsocket++ 
+	testall > testall.out
+	diff -c testall.exp testall.out || make -f Makefile.in message
+*** testall.exp	Sat May 21 17:43:55 1994
+--- testall.out	Mon Dec 11 10:19:00 1995
+***************
+*** 1,7 ****
+  Socket name = /tmp/soc
+! tdunread: 7 strings: tdunwrite /tmp/soc mary had a little lamb 
+  
+! tdinread: mary had a little lamb 
+  socket type = 2
+  socket linger time = -1
+  socket linger time = 10
+--- 1,7 ----
+  Socket name = /tmp/soc
+! ./tdunread: 7 strings: ./tdunwrite /tmp/soc mary had a little lamb 
+  
+! ./tdinread: mary had a little lamb 
+  socket type = 2
+  socket linger time = -1
+  socket linger time = 10
+***************
+*** 13,29 ****
+  socket debug = 1
+  socket reuse = 0
+  socket reuse = 4
+- socket sendtimeo = 0
+- socket recvtimeo = 0
+  
+  Socket name = /tmp/soc
+! tsunread: tsunwrite
+! tsunread: /tmp/soc
+! tsunread: mary
+! tsunread: had
+! tsunread: a
+! tsunread: little
+! tsunread: lamb
+  
+  sleeping for 3 sec
+  tsinread: 356 haha 23.5 
+--- 13,27 ----
+  socket debug = 1
+  socket reuse = 0
+  socket reuse = 4
+  
+  Socket name = /tmp/soc
+! ./tsunread: ./tsunwrite
+! ./tsunread: /tmp/soc
+! ./tsunread: mary
+! ./tsunread: had
+! ./tsunread: a
+! ./tsunread: little
+! ./tsunread: lamb
+  
+  sleeping for 3 sec
+  tsinread: 356 haha 23.5 
+***************
+*** 31,58 ****
+  tsinwrite1: INT STRING DOUBLE received 
+  tsinwrite2: STRING CHAR received 
+  
+! tpipe parent got: lamb little a had mary tpipe 
+  tpipe child got: 5 4 3 2 1 0 
+  
+! tsockpair Child: 6: tsockpair mary had a little lamb 
+  tsockpair Parent: Child received 6 strings
+  
+  tpopen Got from ipopen: tpopentest -o: Hello O world!!! 
+- tpopen Result from iopopen: echo test one two three test one two three 
+  tpopen tpopentest -i: this is sent to tpopentest
+  
+  twhois:
+! Knuth, Donald E. (DEK)		DEK@SAIL.STANFORD.EDU
+     Stanford University
+     Computer Science Department
+     Stanford, CA 94305-2140
+     (415) 723-4367
+  
+     Record last updated on 12-Dec-88.
+  
+! Please note that all INTERNET Domain, IP Network Number, and ASN
+! records are now kept in the new Internet Registry, RS.INTERNIC.NET.
+! This whois server only contains DOD Information.
+  
+  
+  thostnames:
+--- 29,58 ----
+  tsinwrite1: INT STRING DOUBLE received 
+  tsinwrite2: STRING CHAR received 
+  
+! tpipe parent got: lamb little a had mary ./tpipe 
+  tpipe child got: 5 4 3 2 1 0 
+  
+! tsockpair Child: 6: ./tsockpair mary had a little lamb 
+  tsockpair Parent: Child received 6 strings
+  
+  tpopen Got from ipopen: tpopentest -o: Hello O world!!! 
+  tpopen tpopentest -i: this is sent to tpopentest
++ tpopen Result from iopopen: echo test one two three test one two three 
+  
+  twhois:
+! Knuth, Donald E. (DEK)
+     Stanford University
+     Computer Science Department
+     Stanford, CA 94305-2140
+     (415) 723-4367
++    DEK@SAIL.STANFORD.EDU
+  
++ 
+     Record last updated on 12-Dec-88.
+  
+! Please be advised that this whois server only contains DOD Information.
+! All INTERNET Domain, IP Network Number, and ASN records are now kept in
+! the new Internet Registry, RS.INTERNIC.NET (198.41.0.5).
+  
+  
+  thostnames:
+
+If there are any differences, manually check whether
+testall.out and testall.exp have the same lines but
+only their order is different. If they have the same
+lines but for the order, you have installed properly.
+Otherwise, try to findout what might be the reason and
+if you could not please email me with your problem at
+gs4t@virginia.edu.
+
+[reuse:royholl]/home/royholl/asset-sub/766/socket++-1.10/test> 
+[reuse:royholl]/home/royholl/asset-sub/766/socket++-1.10/test> 
+
+Script command is complete on Mon Dec 11 10:19:47 EST 1995.

@@ -1,0 +1,9 @@
+#!/bin/bash -f
+
+while true
+do
+~/bin/random sekmote1.sif
+sleep 1
+~/bin/random sekmote2.sif
+sleep 1
+done
